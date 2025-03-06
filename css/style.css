@@ -20,20 +20,10 @@ body, body > * {
     transform-style: preserve-3d;
 }
 
-body > input[value="back"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    display: none;
-}
-
 input[type="checkbox"], input[type="radio"] {
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0;
 }
 
 
@@ -55,7 +45,7 @@ input[type="checkbox"], input[type="radio"] {
 body > div:nth-of-type(2) {
     max-width: 1000px;
     width: 60%;
-    height: 60%;
+    height: 70%;
     border-radius: 10px;
     background-color: #ffffff;
     aspect-ratio: 3 / 1;
@@ -97,11 +87,11 @@ body > div:nth-of-type(2) {
         display: flex;
 
         header {
-            padding: 2em 1em;
+            padding: var(--height-dashboard) var(--padding-sides);
             width: 80px;
             height: 100%;
 
-            img {
+            > img:first-of-type {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
@@ -120,10 +110,13 @@ body > div:nth-of-type(2) {
                 gap: 1em;
 
                 li {
-                    width: 30px;
-                    height: 30px;
+                    width: var(--icon-size-header);
+                    height: var(--icon-size-header);
                     border-radius: 50%;
-                    background-color: var(--color-white);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }  
         }
@@ -136,18 +129,12 @@ body > div:nth-of-type(2) {
 
             /* DASHBOARD TOP */
             > div:first-of-type {
-                padding: 1em;
-                height: 80px;
+                padding: var(--padding-sides) var(--padding-sides) 0 var(--padding-sides);
+                height: var(--height-dashboard);
 
                 display: flex;
                 justify-content: start;
                 align-items: center;
-
-                > h2 {
-                    font-size: 1.5em;
-                    font-weight: 500;
-                    color: var(--color-grey-dark);	
-                }
             }
 
             /* DASHBOARD BOTTOM */
@@ -250,6 +237,10 @@ html:has(input[value="widget4"]:checked) {
 /* CONTAINER */
 /* -------- */
 @container style(--web-state: zoomed-out) {
+    header nav ul li {
+         background-color: var(--color-white);
+    }
+
     body {
         background-color: var(--color-primary);
         perspective: 600px;
@@ -265,14 +256,41 @@ html:has(input[value="widget4"]:checked) {
 }
 
 @container style(--web-state: zoomed-in) {
+    header nav ul li {
+        --icon-size-header: 40px;
+        background-color: var(--color-white);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:first-of-type {
+            background-color: var(--color-tertiary);
+
+            > svg {
+                fill: var(--color-white);
+            }
+        }
+
+        &:has(svg) svg {
+            max-width: 20px;
+            width: 20px;
+            height: 20px;
+            fill: var(--color-tertiary);
+        }
+
+        &:hover {
+            border: 2px solid var(--color-tertiary);
+            scale: 1.15;
+        }
+    }
+
     body {
         background-color: var(--color-secondary);
         perspective: 1200px;
     }
 
     body > div:nth-of-type(2) {
-        width: 80%;
-        height: 80%;
+        width: 85%;
+        height: 90%;
         transform: rotateX(40deg);
 
         -webkit-box-shadow: 20px 30px 10px 0 rgba(61, 61, 61, 0.208);
@@ -286,7 +304,7 @@ html:has(input[value="widget4"]:checked) {
 
     body > div:nth-of-type(2) > div:nth-of-type(2) {
         display: flex;
-    }
+    }                    
 }
 
 /* WIDGET SECTION */

@@ -1,20 +1,25 @@
 :root {
     --color-primary: #f9f9f9;
     --color-secondary: #a1b7bc;
-    --color-tertiary: #e0e0e0;
+    --color-tertiary: #213555;
 
-    --color-grey-dark: #333;
+    --color-grey-dark: #202020;
     --color-grey-light: #f4f4f4;
 
     --color-white: #fff;
     --color-black: #000;
-    --color-creme: #eff5f5;
+    --color-creme: #f1f0f0;
 
     --rotate-angle: 20deg;
 
     --font-family: 'Agrandir', sans-serif;
 
+    /* padding en margins */
+    --padding-sides: 1em;
+    --height-dashboard: 100px;
+
     /* container style queries */
     --web-state: zoomed-out;
     --widget-section: ;
+    --icon-size-header: 34px;
 }

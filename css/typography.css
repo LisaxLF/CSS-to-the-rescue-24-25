@@ -1,10 +1,61 @@
 @font-face {
     font-family: 'Agrandir';
-    src: url('../fonts/PPAgrandir-Regular.otf') format('open-type');
+    src: url('../fonts/PPAgrandir-GrandLight.otf') format('opentype');
+    font-weight: 300;
 }
 
 @font-face {
     font-family: 'Agrandir';
-    src: url('../fonts/PPAgrandirText-Bold.otf') format('open-type');
-    font-weight: bold;
+    src: url('../fonts/PPAgrandir-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../fonts/PPAgrandir-NarrowRegular.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../fonts/PPAgrandir-TightRegular.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../fonts/PPAgrandirText-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../fonts/PPAgrandir-WideLight.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Agrandir';
+    src: url('../fonts/PPAgrandir-GrandHeavy.otf') format('opentype');
+    font-weight: 900;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    color: var(--color-tertiary);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2.25em;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 1.25em;
 }
