@@ -1,0 +1,20 @@
+:root {
+    --color-primary: #f9f9f9;
+    --color-secondary: #a1b7bc;
+    --color-tertiary: #e0e0e0;
+
+    --color-grey-dark: #333;
+    --color-grey-light: #f4f4f4;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-creme: #eff5f5;
+
+    --rotate-angle: 20deg;
+
+    --font-family: 'Agrandir', sans-serif;
+
+    /* container style queries */
+    --web-state: zoomed-out;
+    --widget-section: ;
+}
