@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D HTML Setup</title>
+    <style>
+        body, body > * {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform: rotate3d(1, 1, 1, 0deg);
+            transform-style: preserve-3d;
+            /* animation: rotate 5s infinite linear; */
+        }
+
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 0, 0, 0.5);
+            border: 1px solid #ccc;
+        }
+
+        .front  { transform: translateZ(100px); }
+        .back   { transform: rotateY(180deg) translateZ(100px); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px); }
+        .top    { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+        .website-dashboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80em;
+            height: 50em;
+            aspect-ratio: 16/9;
+            background-color: #6f96d5;
+
+            transform: rotateX(40deg);
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="website-dashboard">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>

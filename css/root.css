@@ -22,4 +22,8 @@
     --web-state: zoomed-out;
     --widget-section: ;
     --icon-size-header: 34px;
+
+    /* Scene 3d space */
+    --border-radius: 10px;
+    --perspective-scene: ;
 }
