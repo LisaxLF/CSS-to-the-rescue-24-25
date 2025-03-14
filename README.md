@@ -9,9 +9,11 @@ Voor het vak CSS begonnen we met een mini groepsopdracht, waarin ieder groepje e
 Vandaag waren de presentaties van onze kleine showcases, maar ik was er helaas niet bij. In de middag werd de echte opdracht besproken. Thuis ben ik alvast begonnen met het opstellen van een aantal ideeën. Dit jaar wilde ik graag iets doen met een control panel, maar dan in een isometrische stijl. Ik begon op Pinterest met wat inspiratie en vond een aantal afbeeldingen die me hielpen mijn concept verder vorm te geven. Ik had ook al een idee welke CSS-technieken ik wilde gebruiken, zoals nesting en container style queries.
 
 ### Het idee
-![IMG_0713](https://github.com/user-attachments/assets/53d3b238-4ca9-4a43-ad59-17aa6467eb8e)
-![IMG_0714](https://github.com/user-attachments/assets/2e9cc6a5-afbf-498a-81e2-9cc188b4abff)
-![IMG_0710](https://github.com/user-attachments/assets/e2750b3e-d168-4abf-9ade-5ce24e5223b1)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/53d3b238-4ca9-4a43-ad59-17aa6467eb8e" width="200">
+  <img src="https://github.com/user-attachments/assets/2e9cc6a5-afbf-498a-81e2-9cc188b4abff" width="200">
+  <img src="https://github.com/user-attachments/assets/e2750b3e-d168-4abf-9ade-5ce24e5223b1" width="200">
+</p>
 
 
 ## Week 2
