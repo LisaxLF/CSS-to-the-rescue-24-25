@@ -10,10 +10,10 @@ Vandaag waren de presentaties van onze kleine showcases, maar ik was er helaas n
 
 ### Het idee
 
-<div style="display: flex;" align="start">
-  <img src="https://github.com/user-attachments/assets/53d3b238-4ca9-4a43-ad59-17aa6467eb8e" width="100%">
-  <img src="https://github.com/user-attachments/assets/2e9cc6a5-afbf-498a-81e2-9cc188b4abff" width="100%">
-  <img src="https://github.com/user-attachments/assets/e2750b3e-d168-4abf-9ade-5ce24e5223b1" width="100%">
+<div align="start">
+  <img src="https://github.com/user-attachments/assets/53d3b238-4ca9-4a43-ad59-17aa6467eb8e" width="300">
+  <img src="https://github.com/user-attachments/assets/2e9cc6a5-afbf-498a-81e2-9cc188b4abff" width="300">
+  <img src="https://github.com/user-attachments/assets/e2750b3e-d168-4abf-9ade-5ce24e5223b1" width="300">
 </div>
 
 
