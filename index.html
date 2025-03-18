@@ -13,7 +13,14 @@
 <body>
     <div>
         <!-- 3D Controls -->
-
+        <form>
+            <label> Rotation
+                <input type="range" name="rotation-control" min="0" max="360" value="0" step="90">
+            </label>
+            <label> Show 3D
+                <input type="checkbox" name="show">
+            </label>
+        </form>
     </div>
     <!-- website dashboard -->
      <div>
@@ -64,40 +71,142 @@
                 <!-- DASHBOARD TOP -->
                 <div>
                     <h2>DASHBOARD</h2>
+                    <section>
+                        <div>
+                            <span>31</span>
+                            <p>Leerlingen</p>   
+                        </div>  
+                        <div>
+                            <span>3</span>
+                            <p>Docenten</p>   
+                        </div>                     
+                    </section>
                 </div>
                 <!-- DASHBOARD GRID -->
                 <div>
                     <div>
-                        <input type="radio" name="widgetSections" value="widget1">
-                        <div data-cuboid="widget1">
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
+                        <input type="checkbox" name="widgetSections" value="widgetOpdracht">
+                        <div data-cuboid="widgetOpdracht">
+                            <div></div>
+                            <div>
+                                 <div>
+                                    <nav>
+                                        <h3>Eindopdracht CSS</h3>
+                                        <a><svg width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="var(--color-tertiary)" class="bi bi-three-dots-vertical"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path> </g></svg></a>
+                                    </nav>
+                                    <section>
+                                        <div>
+                                            <article>
+                                                <div>
+                                                    <div data-cuboid>
+                                                        <div></div>
+                                                        <div>
+                                                            <span>Movie timeline</span>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>20</span>
+                                                    <p>leerlingen</p>
+                                                </div>
+                                            </article>
+                                            <article>
+                                                <div>
+                                                    <div data-cuboid>
+                                                        <div></div>
+                                                        <div>
+                                                            <span>Control panel</span>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>10</span>
+                                                    <p>leerlingen</p>
+                                                </div>
+                                            </article>
+                                            <article>
+                                                <div>
+                                                    <div data-cuboid>
+                                                        <div></div>
+                                                        <div>
+                                                            <span>Rubiks cube</span>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>1</span>
+                                                    <p>leerling</p>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
                     </div>
                     <div>
-                        <input type="radio" name="widgetSections" value="widget2">
-                        <div data-cuboid="widget2">
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
-                            <div data-cuboid-side></div>
+                        <input type="checkbox" name="widgetSections" value="widgetDocenten">
+                        <div data-cuboid="widgetDocenten">
+                            <div></div>
+                            <div>
+                                <div>
+                                    <nav>
+                                        <h3>Docenten CSS</h3>
+                                        <a><svg width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="var(--color-tertiary)" class="bi bi-three-dots-vertical"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path> </g></svg></a>
+                                    </nav>
+                                    <section>
+
+                                    </section>
+                                </div>
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
                     </div>
                     <div>
-                        <input type="radio" name="widgetSections" value="widget3">
+                        <input type="checkbox" name="widgetSections" value="widget3">
+                        <div data-cuboid="widget3">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                     <div>
-                        <input type="radio" name="widgetSections" value="widget4">
+                        <input type="checkbox" name="widgetSections" value="widget4">
+                        <div data-cuboid="widget4">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
             </div>            
         </div>
      </div>
 </body>
+<script src="/js/tinybitofjs.js"></script>
 </html>

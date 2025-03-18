@@ -22,8 +22,57 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     transition: all 0.5s ease-in-out;
+
+    > div:first-of-type {
+        position: absolute;
+        padding: 1em 2em;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        bottom: 20px;
+        left: 50%;
+        z-index: 20;
+        /* transform: translateX(-50%) translateY(200px); */
+        opacity: 0;
+    }
 }
 
+/* CONTROLLER */
+html:has(input[type="range"]:active) div[data-cuboid="widgetOpdracht"] {
+    transition: transform 300ms ease-in-out;
+    transform: translateZ(45px) rotateZ(var(--rotate-angle-cuboid-opdracht));
+}
+
+html:has(input[type="range"]:active) div[data-cuboid="widgetDocenten"] {
+    transition: transform 300ms ease-in-out;
+    transform: translateZ(45px) rotateZ(var(--rotate-angle-cuboid-laptop));
+}
+
+form {
+    display: flex;
+    gap: 1.5em;
+
+    button {
+        border-radius: 4px;
+        padding: .4em .8em;
+        border: 2px solid var(--widget-section-laptop-clr);
+        background-color: transparent;
+        font-family: var(--font-family);
+        font-size: 1em;
+        
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+}
+
+
+/* INPUTS */
 input[type="checkbox"], input[type="radio"] {
     width: 100%;
     height: 100%;
@@ -36,6 +85,49 @@ input[type="checkbox"], input[type="radio"] {
     z-index: 10;
 }
 
+html:has(input[name="show"]) form label:nth-of-type(2) {
+    padding: .6em 1.4em;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--background-mix);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--background-mix);
+    }
+}
+
+input[type="checkbox"][name="widgetSections"] {
+    transition: transform ease-in-out var(--animation-platform) var(--animation-platform);
+
+    transform: translate3d(0, 0, var(--isChecked));
+
+    &:checked {
+        --isChecked: 45px;
+    }
+
+    &:not(:checked) {
+        --isChecked: 0px;
+    }
+}
+
+label:has(input[name="show"]:checked) {
+    border: none;
+    background-color: var(--widget-section-clr);
+    color: var(--color-white);
+}
+
+body:has(input[type="checkbox"][value="widgetOpdracht"]:checked) input:not([value="widgetOpdracht"]):not([type="range"]):not([name="show"]):not([value="blurry"]),
+body:has(input[type="checkbox"][value="widgetDocenten"]:checked) input:not([value="widgetDocenten"]):not([type="range"]):not([name="show"]):not([value="blurry"]) {
+    appearance: none;
+    display: none;
+}
+
+body:has(input[type="checkbox"][value="widgetOpdracht"]:checked) input[type="checkbox"][value="widgetOpdracht"],
+body:has(input[type="checkbox"][value="widgetDocenten"]:checked) input[type="checkbox"][value="widgetDocenten"],
+body:has(input[type="checkbox"][value="widget3"]:checked) input[type="checkbox"][value="widget3"],
+body:has(input[type="checkbox"][value="widget4"]:checked) input[type="checkbox"][value="widget4"] {
+    cursor: pointer;
+}
 
 /* GRID */
 /* div:first-of-type {
@@ -139,8 +231,29 @@ body > div:nth-of-type(2) {
                 height: var(--height-dashboard);
 
                 display: flex;
-                justify-content: start;
+                justify-content: space-between;
                 align-items: center;
+
+                h2 {
+
+                }
+
+                > section {
+                    /* transform: rotateX(90deg) translateZ(24px); */
+                    display: flex;
+                    gap: 2em;
+
+                    > div {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: .8em;
+
+                        > span {
+                            font-weight: 900;
+                            font-size: 2.25rem;
+                        }
+                    }
+                }
             }
 
             /* DASHBOARD BOTTOM */
@@ -155,28 +268,29 @@ body > div:nth-of-type(2) {
                 column-gap: 1em;
     
                 > div {
+                    container-type: size;
                     background-color: var(--color-white);
                     border-radius: 10px;
                     position: relative;
 
                     &:nth-of-type(1) {
-                        grid-column: 1 / 2;
+                        grid-column: 1;
                         grid-row: 1 / 5;
                     }
 
                     &:nth-of-type(2) {
-                        grid-column: 2 / 3;
-                        grid-row: 1 / 3;
+                        grid-column: 2;
+                        grid-row: 1 / 4;
                     }
 
                     &:nth-of-type(3) {
-                        grid-column: 1 / 2;
+                        grid-column: 1;
                         grid-row: 5 / 7;
                     }
 
                     &:nth-of-type(4) {
-                        grid-column: 2 / 3;
-                        grid-row: 3 / 7;
+                        grid-column: 2;
+                        grid-row: 4 / 7;
                 }
             }
         }
@@ -224,12 +338,12 @@ html:has(input[value="blurry"]:not(:checked)) {
 
 /* ------------ */
 
-html:has(input[value="widget1"]:checked) {
-    --widget-section: widget1;
+html:has(input[value="widgetOpdracht"]:checked) {
+    --widget-section: widgetOpdracht;
 }
 
-html:has(input[value="widget2"]:checked) {
-    --widget-section: widget2;
+html:has(input[value="widgetDocenten"]:checked) {
+    --widget-section: widgetDocenten;
 }
 
 html:has(input[value="widget3"]:checked) {
@@ -240,14 +354,18 @@ html:has(input[value="widget4"]:checked) {
     --widget-section: widget4;
 }
 
+html:has(input[name="show"]:checked) {
+    --show-section-widget-assign: true;
+}
+
 
 /* ------------------------------------------- */
 /*                  CUBIOD                     */
 /* https://www.youtube.com/watch?v=63ZFh6T_iXc */
 /* ------------------------------------------- */
 
-  div[data-cuboid] {
-    --depth: 80px;
+div[data-cuboid] {
+    --depth: 40px;
 
     height: var(--height);
     width: var(--width);
@@ -256,7 +374,7 @@ html:has(input[value="widget4"]:checked) {
     transition: all 0.5s ease-in-out;
     transform: translateZ(calc(var(--depth) * -0.5));
     
-    > div[data-cuboid-side] {
+    > div {
         position: absolute;
 
         &:nth-of-type(1),
@@ -270,12 +388,11 @@ html:has(input[value="widget4"]:checked) {
 
         &:nth-of-type(2) {
             --cooefficent: 0.5;
-        }
+            transform: translate3d(0, 0, calc(var(--depth) * var(--cooefficent)));
+        }        
 
         &:nth-of-type(3),
         &:nth-of-type(4) {
-            --rotation: 90deg;
-
             width: var(--depth);
             height: var(--height);
             left: 50%;
@@ -286,13 +403,8 @@ html:has(input[value="widget4"]:checked) {
                 translate3d(0, 0, calc(var(--width) * -0.5));
         }
 
-        &:nth-of-type(4) {
-            --rotation: -90deg;
-        }
-
         &:nth-of-type(5),
         &:nth-of-type(6) {
-            --rotation: -90deg;
 
             width: var(--width);
             height: var(--depth);
@@ -301,23 +413,35 @@ html:has(input[value="widget4"]:checked) {
             transform:
                 translate(-50%, -50%) 
                 rotateX(var(--rotation))
-                translate3d(0, 0, calc(var(--height) * -0.5));
+                translate3d(0, 0, calc(var(--height) * -0.5))
+            ;
         }
 
-        &:nth-of-type(6) {
-            --rotation: 90deg;
-        }
+        &:nth-of-type(3) { --rotation: -90deg; }
+        &:nth-of-type(4) { --rotation: 90deg; }
+        &:nth-of-type(5) { --rotation: -90deg; }
+        &:nth-of-type(6) { --rotation: 90deg; }
 
     }
 
-    &[data-cuboid="widget1"]  {
-        --width: 460px;
-        --height: 470px;
+    &[data-cuboid="widgetOpdracht"]  {
+        --width: 100cqw;
+        --height: 100cqh;
     }
 
-    &[data-cuboid="widget2"] {
-        --width: 100%;
-        --height: 228px;
+    &[data-cuboid="widgetDocenten"] {
+        --width: 100cqw;
+        --height: 100cqh;
+    }
+
+    &[data-cuboid="widget3"] {
+        --width: 100cqw;
+        --height: 100cqh;
+    }
+
+    &[data-cuboid="widget4"] {
+        --width: 100cqw;
+        --height: 100cqh;
     }
 }
 
@@ -352,11 +476,39 @@ html:has(input[value="widget4"]:checked) {
         z-index: 10;
     }
 
+    body > div:nth-of-type(1) {
+        transform: translateX(-50%) translateY(200px);
+    }
+
+    header nav ul {
+        --animation-duration: 500ms;
+        --base-delay: 0.3s;
+    
+        li {
+            --delay: calc(var(--base-delay) + 0.2s * var(--i));
+    
+            svg {
+                opacity: 0;
+                transform: translateX(-50px);
+                animation: fadeSideIn var(--animation-duration) cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+                animation-delay: var(--delay);
+            }
+        }
+    
+        li:nth-of-type(1) { --i: 1 }
+        li:nth-of-type(2) { --i: 2 }
+        li:nth-of-type(3) { --i: 3 }
+        li:nth-of-type(4) { --i: 4 }
+        li:nth-of-type(5) { --i: 5 }
+        li:nth-of-type(6) { --i: 6 }
+    }
+
     header nav ul li {
         --icon-size-header: 40px;
         background-color: var(--color-white);
         transition: all 0.2s ease-in-out;
         cursor: pointer;
+        overflow: hidden;
 
         &:first-of-type {
             background-color: var(--color-tertiary);
@@ -386,6 +538,7 @@ html:has(input[value="widget4"]:checked) {
         perspective: var(--perspective-scene);
     }
 
+
     body > div:nth-of-type(2) {
         width: 85%;
         height: 90%;
@@ -404,79 +557,330 @@ html:has(input[value="widget4"]:checked) {
         display: flex;
         transform-style: preserve-3d;
     }
+
+    div[data-cuboid] > div:nth-of-type(2) {
+        > div {
+            height: 100%;
+            width: 100%;
+            padding: var(--padding-sides);
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+
+                h3 {
+                    display: inline-block;
+                }
     
-        /* CUBIOD */
-        div[data-cuboid] {
-            > div[data-cuboid-side] {
-                &:nth-of-type(2) { 
-                    background-color: var(--color-white);
-                    border-radius: var(--border-radius); 
+                > a {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    width: var(--icon-size-header);
+                    height: var(--icon-size-header);
+                    background-color: color-mix(in srgb, var(--widget-section-clr) 10%, var(--color-secondary) 10%);
                 }
             }
+
+            section {
+                width: 100%;
+                height: 100%;
+            }
         }
+
+        > section {
+            width: 100%;
+            height: 100%;
+
+            padding: var(--padding-sides);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > div {
+                display: grid;
+                column-gap: 1em;
+            }
+        }
+    }
+
+    div[data-cuboid="widgetOpdracht"] > div:nth-of-type(2) {
+        section > div {
+            height: 100%;
+            padding: var(--padding-sides) 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            article {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                > div:first-of-type {
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    height: var(--height-bar);
+
+                    > div[data-cuboid] {
+                        --width: 10cqw;
+
+                        transform-origin: bottom;
+
+                        > div {
+                            background-color: var(--color-creme);
+                        }
+
+                        &:has(span) span {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                > div:nth-of-type(2) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .4em;
+
+                    > span {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    div[data-cuboid] {
+                        --height: var(--height-timeline);
+                    }
+                }
+                &:nth-of-type(2) {
+                    div[data-cuboid] {
+                        --height: var(--height-control);
+                    }
+                }
+                &:nth-of-type(3) {
+                    div[data-cuboid] {
+                        --height: var(--height-rubiks);
+                    }
+                }
+            }
+
+            
+        }
+    }
 }
 
 /* WIDGET SECTION */
-@container style(--web-state: zoomed-in) and style(--widget-section: widget1) {
-    body > * {
-        transition: all 0.5s ease-in-out;
-        transform-style: preserve-3d;
-    }
-    
+@container style(--web-state: zoomed-in) and style(--widget-section: widgetOpdracht) {    
     body {
-        --width: 50;
-        --height: calc(var(--width) / 2);
-        --depth: 50;
-
+        --widget-section-clr: #271dad;
         --perspective-scene: 1000px;
+        --rotate-angle: 60deg;
+
         background: linear-gradient(90deg, #5c4ce6, #271dad);
         perspective: var(--perspective-scene);
+
+        transform-style: flat;
+    }
+
+    body > div:nth-of-type(1) {
+        transition: opacity 200ms ease-in-out, transform cubic-bezier(0.46, 0.03, 0.52, 0.96) var(--animation-controller) calc(var(--animation-platform) + var(--animation-controller) + var(--animation-timing-delay));       
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
     }
 
     body > div:nth-of-type(2) {
-        --rotate-angle: 72deg;
-        transform: rotateX(var(--rotate-angle)) rotateZ(10deg) translateX(200px) translateY(100px);
+        transform: rotateX(var(--rotate-angle)) translateX(260px) translateY(100px) scale(1.4);
     }
 
     body > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
-        transition: all 0.5s ease-in-out;
+        transition: all var(--animation-platform) ease-in-out;
     }
 
-    /* CUBIOD */
-    div[data-cuboid="widget1"] {
-        transform: translateZ(10px);
+    /* CUBIODS */
+    div[data-cuboid="widgetOpdracht"] {
+        transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-opdracht));
         transition: 
-            transform 0.5s ease-in-out 0.5s;
+            transform 0.5s linear var(--animation-platform)
+        ;
 
-        > div[data-cuboid-side] {
-            &:not(:nth-of-type(6)) { background-color: var(--color-white); }
-            &:nth-of-type(6) { background-color: #271dad; }
+        > div {
+            background-color: var(--widget-section-clr);
+            
+            &:nth-of-type(2) { background-color: white; }
         }
     }
 }
 
-@container style(--web-state: zoomed-in) and style(--widget-section: widget2) {
+@container style(--web-state: zoomed-in) and style(--widget-section: widgetDocenten) {
     body {
+        --widget-section-clr: #8bd44f;
+
         background: linear-gradient(90deg, #8bd44f, #3d9132);
         perspective: 1000px;
+
+        transform-style: flat;
     }
 
     body > div:nth-of-type(2) {
-        --rotate-angle: 60deg;
-        transform-origin: center;
-        transform: rotateX(var(--rotate-angle)) rotateZ(20deg) translateX(100px);
+        --rotate-angle: 50deg;
+        transform: rotateX(var(--rotate-angle)) scale(1.4) translateX(-200px) translateY(160px);
     }
 
-    div[data-cuboid="widget2"] {
-        transform: translateZ(10px);
-        transition: 
-            transform 0.5s ease-in-out 0.5s;
+    body > div:nth-of-type(1) {
+        transition: opacity 200ms ease-in-out, transform cubic-bezier(0.46, 0.03, 0.52, 0.96) var(--animation-controller) calc(var(--animation-platform) + var(--animation-controller) + var(--animation-timing-delay));       
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 
-        > div[data-cuboid-side] {
-            --border-radius: 0px;
-            &:not(:nth-of-type(6)) { background-color: var(--color-white); }
-            &:nth-of-type(4) { background-color: transparent; }
-            &:nth-of-type(6) { background-color: #8bd44f; }
+    div[data-cuboid="widgetDocenten"] {
+        transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-laptop));
+        transition: 
+            transform 0.5s linear var(--animation-platform)
+        ;
+
+        > div {
+            background-color: var(--widget-section-clr);
+            
+            &:nth-of-type(2) { background-color: white; }
+        }
+    }
+}
+
+@container style(--web-state: zoomed-in) and style(--widget-section: widget3) {
+    body {
+        --widget-section-clr: #674fd4;
+        --rotate-angle: 60deg;
+
+        background: linear-gradient(90deg, #674fd4, #6e3291);
+        perspective: 1000px;
+
+        transform-style: flat;
+    }
+
+    body > div:nth-of-type(2) {
+        transform: rotateX(var(--rotate-angle)) scale(1.4) translateX(200px) translateY(-100px);
+    }
+
+    body > div:nth-of-type(1) {
+        transition: opacity 200ms ease-in-out, transform cubic-bezier(0.46, 0.03, 0.52, 0.96) var(--animation-controller) calc(var(--animation-platform) + var(--animation-controller) + var(--animation-timing-delay));       
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    div[data-cuboid="widget3"] {
+        transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-laptop));
+        transition: 
+            transform 0.5s linear var(--animation-platform)
+        ;
+
+        > div {
+            background-color: var(--widget-section-clr);
+            
+            &:nth-of-type(2) { background-color: white; }
+        }
+    }
+}
+
+@container style(--web-state: zoomed-in) and style(--widget-section: widget4) {
+    body {
+        --widget-section-clr: #d49f4f;
+        --rotate-angle: 60deg;
+
+        background: linear-gradient(90deg, #d49f4f, #d47b4f);
+        perspective: 1000px;
+
+        transform-style: flat;
+    }
+
+    body > div:nth-of-type(2) {
+        transform: rotateX(var(--rotate-angle)) scale(1.4) translateX(-200px) translateY(-100px);
+    }
+
+    body > div:nth-of-type(1) {
+        transition: opacity 200ms ease-in-out, transform cubic-bezier(0.46, 0.03, 0.52, 0.96) var(--animation-controller) calc(var(--animation-platform) + var(--animation-controller) + var(--animation-timing-delay));       
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    div[data-cuboid="widget4"] {
+        transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-laptop));
+        transition: 
+            transform 0.5s linear var(--animation-platform)
+        ;
+
+        > div {
+            background-color: var(--widget-section-clr);
+            
+            &:nth-of-type(2) { background-color: white; }
+        }
+    }
+}
+
+/* container 3d transform */
+@container style(--web-state: zoomed-in) and style(--widget-section: widgetOpdracht) and style(--show-section-widget-assign: true) {
+
+    div[data-cuboid="widgetOpdracht"] > div:nth-of-type(2) {
+        section > div {
+            article {
+                > div:first-of-type {
+                    position: relative;
+
+                    > div[data-cuboid] {
+                        --width: 10cqw;                        
+                        transform: 
+                            rotateX(-90deg) 
+                            translateY(-15px)
+                        ;
+
+                        transform-origin: bottom;
+
+                        > div {
+                            /* background-color: var(--color-creme); */
+                        
+                            &:nth-of-type(2) {
+                                background-color: color-mix(in srgb, var(--color-creme) 50%, #808080 50%);
+                            }
+                        
+                            &:nth-of-type(5) {
+                                background-color: color-mix(in srgb, var(--color-creme) 70%, #d0d0d0 30%);
+                            }
+                        
+                            &:last-of-type {
+                                box-shadow: 0px 1px 19px 5px rgb(98 98 98 / 15%);
+                            }
+                        }                        
+
+                        &:has(span) span {
+                            transition: all ease-in-out 300ms;
+                            display: flex;
+                            position: absolute;
+                            left: 50%;
+                            top: 0;
+                            opacity: 0;
+                            transform: translate(-50%);
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    div[data-cuboid] {
+                    }
+                }
+                &:nth-of-type(2) {
+                    div[data-cuboid] {
+                    }
+                }
+                &:nth-of-type(3) {
+                    div[data-cuboid] {
+                    }
+                }
+            }
         }
     }
 }

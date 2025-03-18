@@ -21,9 +21,38 @@
     /* container style queries */
     --web-state: zoomed-out;
     --widget-section: ;
+    --show-section-widget-assign: false;
+    --widget-section-clr: var(--color-creme);
     --icon-size-header: 34px;
 
     /* Scene 3d space */
+    --rotate-angle-cuboid-opdracht: 0;
+    --rotate-angle-cuboid-laptop: 0;
     --border-radius: 10px;
     --perspective-scene: ;
+    --scale-angle-cuboid: 1.4;
+
+    /* Animations */
+    --animation-platform: 500ms;
+    --animation-controller: 500ms;
+    --animation-timing-delay: 100ms;
+
+    /* inputs */
+    --isChecked: 0;
+
+    /* Data */   
+    --amount-students: 31;
+    --amount-timeline: 20;
+    --amount-control: 10;
+    --amount-rubiks: 1;
+
+    --height-bar: 40cqh;
+    
+    --height-timeline: calc(var(--amount-timeline) / var(--amount-students) * var(--height-bar));
+    --height-control: calc(var(--amount-control) / var(--amount-students) * var(--height-bar));
+    --height-rubiks: calc(var(--amount-rubiks) / var(--amount-students) * var(--height-bar));
+    
+    /* color mixes */
+    --background-mix: color-mix(in srgb, var(--widget-section-clr) 60%, var(--color-secondary) 60%);
+
 }

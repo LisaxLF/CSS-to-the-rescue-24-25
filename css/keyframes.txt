@@ -1,4 +1,0 @@
-ANIMATIONS
-
-1. border-radius top plane from 10px to 0
-2. 
