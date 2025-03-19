@@ -26,8 +26,6 @@
     --icon-size-header: 34px;
 
     /* Scene 3d space */
-    --rotate-angle-cuboid-opdracht: 0;
-    --rotate-angle-cuboid-laptop: 0;
     --border-radius: 10px;
     --perspective-scene: ;
     --scale-angle-cuboid: 1.4;
@@ -36,6 +34,20 @@
     --animation-platform: 500ms;
     --animation-controller: 500ms;
     --animation-timing-delay: 100ms;
+
+    --animation-offset-time: 500ms;
+    --animation-chart-sequence-time: 5s;
+    --animation-line-bar: 500ms;
+    --animation-chart-fadebar: 800ms;
+
+    --animation-fadeInAssignmentLine: 500ms;
+    --animation-fadeInAssignmentName: 300ms;
+    --animation-turningAssignmentLabel: 5s;
+
+
+    --animation-sequence-first-part: calc(var(--animation-chart-fadebar) * 3 + var(--animation-offset-time));
+    --animation-sequence-sec-part: calc(var(--animation-sequence-first-part) + var(--animation-fadeInAssignmentLine) + var(--animation-offset-time));
+    --animation-sequence-third-part: calc(var(--animation-sequence-sec-part) + var(--animation-fadeInAssignmentName) + var(--animation-offset-time));
 
     /* inputs */
     --isChecked: 0;
@@ -54,5 +66,12 @@
     
     /* color mixes */
     --background-mix: color-mix(in srgb, var(--widget-section-clr) 60%, var(--color-secondary) 60%);
+
+
+    /* Controls */
+    --rotate-angle-cuboid-opdracht: 0deg;
+    --rotate-angle-cuboid-laptop: 0deg;
+
+    --rotate-angle: 60deg;
 
 }
