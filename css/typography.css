@@ -126,6 +126,6 @@ body > section {
     } 
 
     100% {
-        transform: translateY(-100%) translateZ(5.5em);
+        transform: translateY(-200%) translateZ(5.5em);
     }
 }
