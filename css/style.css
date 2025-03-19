@@ -130,8 +130,8 @@ body:has(input[type="checkbox"][value="widgetDocenten"]:checked) input:not([valu
 
 body:has(input[type="checkbox"][value="widgetOpdracht"]:checked) input[type="checkbox"][value="widgetOpdracht"],
 body:has(input[type="checkbox"][value="widgetDocenten"]:checked) input[type="checkbox"][value="widgetDocenten"],
-body:has(input[type="checkbox"][value="widget3"]:checked) input[type="checkbox"][value="widget3"],
-body:has(input[type="checkbox"][value="widget4"]:checked) input[type="checkbox"][value="widget4"] {
+body:has(input[type="checkbox"][value="widgetScore"]:checked) input[type="checkbox"][value="widgetScore"],
+body:has(input[type="checkbox"][value="widgetLaptop"]:checked) input[type="checkbox"][value="widgetLaptop"] {
     cursor: pointer;
 }
 
@@ -353,12 +353,12 @@ html:has(input[value="widgetDocenten"]:checked) {
     --widget-section: widgetDocenten;
 }
 
-html:has(input[value="widget3"]:checked) {
-    --widget-section: widget3;
+html:has(input[value="widgetScore"]:checked) {
+    --widget-section: widgetScore;
 }
 
-html:has(input[value="widget4"]:checked) {
-    --widget-section: widget4;
+html:has(input[value="widgetLaptop"]:checked) {
+    --widget-section: widgetLaptop;
 }
 
 html:has(input[name="show"]:checked) {
@@ -441,12 +441,12 @@ div[data-cuboid] {
         --height: 100cqh;
     }
 
-    &[data-cuboid="widget3"] {
+    &[data-cuboid="widgetScore"] {
         --width: 100cqw;
         --height: 100cqh;
     }
 
-    &[data-cuboid="widget4"] {
+    &[data-cuboid="widgetLaptop"] {
         --width: 100cqw;
         --height: 100cqh;
     }
@@ -770,7 +770,7 @@ div[data-cuboid] {
     }
 
     body > div:nth-of-type(2) {
-        transform: rotateX(var(--rotate-angle)) translateX(260px) translateY(100px) scale(1.4);
+        transform: rotateX(var(--rotate-angle)) translateX(260px) translateY(100px) scale(var(--scale-angle-cuboid));
     }
 
     body > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) {
@@ -795,6 +795,7 @@ div[data-cuboid] {
 @container style(--web-state: zoomed-in) and style(--widget-section: widgetDocenten) {
     body {
         --widget-section-clr: #8bd44f;
+        --scale-angle-cuboid: 1.4;
 
         background: linear-gradient(90deg, #8bd44f, #3d9132);
         perspective: 1000px;
@@ -803,7 +804,7 @@ div[data-cuboid] {
     }
 
     body > div:nth-of-type(2) {
-        transform: rotateX(var(--rotate-angle)) scale(1.4) translateX(-200px) translateY(100px);
+        transform: rotateX(var(--rotate-angle)) scale(var(--scale-angle-cuboid)) translateX(-200px) translateY(100px);
     }
 
     body > div:nth-of-type(1) {
@@ -826,7 +827,7 @@ div[data-cuboid] {
     }
 }
 
-@container style(--web-state: zoomed-in) and style(--widget-section: widget3) {
+@container style(--web-state: zoomed-in) and style(--widget-section: widgetScore) {
     body {
         --widget-section-clr: #674fd4;
 
@@ -846,7 +847,7 @@ div[data-cuboid] {
         transform: translateX(-50%) translateY(0);
     }
 
-    div[data-cuboid="widget3"] {
+    div[data-cuboid="widgetScore"] {
         
         transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-laptop));
         transition: 
@@ -861,7 +862,7 @@ div[data-cuboid] {
     }
 }
 
-@container style(--web-state: zoomed-in) and style(--widget-section: widget4) {
+@container style(--web-state: zoomed-in) and style(--widget-section: widgetLaptop) {
     body {
         --widget-section-clr: #d49f4f;
 
@@ -881,7 +882,7 @@ div[data-cuboid] {
         transform: translateX(-50%) translateY(0);
     }
 
-    div[data-cuboid="widget4"] {
+    div[data-cuboid="widgetLaptop"] {
         transform: translateZ(25px) rotateZ(var(--rotate-angle-cuboid-laptop));
         transition: 
             transform 0.5s linear var(--animation-platform)
