@@ -1,0 +1,96 @@
+@keyframes fadeSideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ANIMATION SEQUENCE CHARTS */
+
+/* Step 1 */
+@keyframes fadeBarChartEl {
+    from {
+        transform: 
+            rotateX(0) 
+            translateY(0)
+            translateZ(-3em)
+        ;
+    } 
+
+    to {
+        transform: 
+            rotateX(-90deg) 
+            translateY(0)
+            translateZ(-3em)
+        ;
+    }
+}
+
+/* Step 2 */
+@keyframes fadeInAssignmentLine {
+    from {
+        height: 0em;
+    } to {
+        height: 4em;
+    }
+}
+
+@keyframes fadeInAssignmentName {
+    from {
+        opacity: 0;
+        transform: translateY(-4em);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-5em);
+    }
+}
+
+@keyframes turningAssignmentLabel {
+    from {
+        transform: rotateY(0turn) translateY(-5em);
+    } to {
+        transform: rotateY(1turn) translateY(-5em);
+    }
+}
+
+/* ANIMATION NEURON SEQUENCE */
+@keyframes innerRingSpin {
+    0% {
+        transform: rotateX(0turn) rotateY(0turn);
+    }
+    100% {
+        transform: rotateX(1turn) rotateY(1turn);
+    }
+}
+
+@keyframes outerRingSpin {
+    0% {
+        transform: rotateX(0turn) rotateY(0turn);
+    }
+    100% {
+        transform: rotateX(-2turn) rotateY(-2turn);
+    }
+}
+
+@keyframes rotatingHeads {
+    from {
+        transform: rotateY(0turn);
+    } to {
+        transform: rotateY(1turn);
+    }
+}
+
+@keyframes hovering {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
