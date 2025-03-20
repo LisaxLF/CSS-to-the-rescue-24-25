@@ -73,8 +73,50 @@ Met deze kennis kon ik eindelijk de fout in mijn eigen project oplossen en had i
 
 Nu deze basis er stond, kon ik verder met het integreren van de cube in de widget. Het idee was dat wanneer je op een widget klikt, het lijkt alsof deze als een platform omhoogkomt. Dit gaf een interactief en dynamisch effect aan het dashboard.
 
+## Week 4 – Final Touches & 3D Animaties
+In Week 4 lag de focus op het afronden van de opdracht CSS tot the Rescue, met de laatste technische verbeteringen, 3D-animaties en interacties om het project compleet te maken.
+
+### 📱 Responsiveness & Container Queries
+<ul>
+  <li>De layout responsive gemaakt, zodat het dashboard goed schaalt op verschillende schermformaten.</li>
+  <li>Container Queries toegepast, niet zozeer om widgets te schalen, maar om ervoor te zorgen dat mijn 3D-platform altijd dezelfde breedte en hoogte behoudt als de widget. Hierdoor kon ik werken met vaste waardes voor de cuboids in plaats van percentages, wat essentieel was voor de 3D-structuur.
+  </li>
+</ul>
+
+### 🛠 Widgets Uitgewerkt
+<ul>
+  <li>Twee widgets volledig uitgewerkt, met een sterke focus op zowel de visuele uitstraling als het 3D-aspect.</li>
+  <li>Voor elk widget een control panel toegevoegd, waarmee je de 3D-weergave kunt bekijken en de hoeken (angles) kunt aanpassen voor een interactieve ervaring.</li>
+</ul>
+
+### 🎨 3D Effecten & Animaties
+<ul>
+  <li>De 3D-effecten voor twee data-widgets ontworpen en geïmplementeerd.</li>
+  <li>Geëxperimenteerd met verschillende animaties en overgangen om een vloeiend en interactief gevoel te creëren.</li>
+  <li>Animaties verfijnd op basis van snelheid, vertragingen en easing voor een realistische beweging.</li>
+</ul>
+
+### 🎬 Title Intro Gemaakt
+<ul>
+  <li>Het laatste criterium dat ik nog moest implementeren was een passende titel.</li>
+  <li>Geëxperimenteerd met verschillende animaties en overgangen om een vloeiend en interactief gevoel te creëren.</li>
+  <li>Daarom heb ik een intro-animatie ontworpen en toegevoegd, waarbij de titel dynamisch in beeld komt om het dashboard een sterke visuele start te geven.</li>
+</ul>
+
+
 ## Bronnen
-https://codepen.io/Jordan/pen/nQgYjv?editors=0110 [GRID gradient]
-https://codepen.io/levente-frks/pen/GRvBjLM?editors=1100 [Isometric card animation]
-https://css-tricks.com/almanac/properties/p/perspective/#:~:text=The%20perspective%20CSS%20property%20gives,more%20impressive%20the%20visual%20effect. [perspective]
-https://webcode.tools/css-generator/rotate [Rotate tool]
+
+<ul>
+  <li>https://codepen.io/Jordan/pen/nQgYjv?editors=0110 [GRID gradient]</li>
+  <li>https://codepen.io/levente-frks/pen/GRvBjLM?editors=1100 [Isometric card animation]</li>
+  <li>https://css-tricks.com/almanac/properties/p/perspective/#:~:text=The%20perspective%20CSS%20property%20gives,more%20impressive%20the%20visual%20effect. [perspective]</li>
+  <li>https://css-tricks.com/css-container-queries/ [container queries]</li>
+</ul>
+
+### styling tools
+
+<ul>
+  <li>https://css.glass/ [Glassmorphism tool]</li>
+  <li>https://cssgradient.io/ [Gradient tool]</li>
+  <li>https://webcode.tools/css-generator/rotate [Rotate tool]</li>
+</ul>
